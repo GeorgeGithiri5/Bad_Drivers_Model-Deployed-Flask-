@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Bad Drivers Model</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css'>
+<link href="{{ url_for('static', filename='main.css') }}" rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+	<div class="d-flex justify-content-center">
+	<div class="col-7">
+	<form action="{{ url_for('predict') }}" method="post">
+		<h1 class="text-muted my-5">Enter The Values Below To Predict Insurance Loss</h1>
+		<p class="text-center text-primary">{{ prediction_text }}</p>
+			<div class="form-group">
+				<label>Enter Accident percentage Per bil miles</label>
+				<input type="text" class="form-control" name="drivers_per_bil_miles" placeholder="drivers per bil miles" required
+				/>
+			</div>
+			<div class="form-group">
+				<label>Enter Accident percentage drivers overspeeding</label>
+				<input type="text" class="form-control" name="drivers_overspeeding" placeholder="drivers overspeeding" required/>
+			</div>
+			<div class="form-group">
+				<label>Enter Accident percentage drunk drivers</label>
+				<input type="text" class="form-control" name="drunk_drivers" placeholder="drunk drivers" required/>
+			</div>
+			<div class="form-group">
+				<label>Enter Accident percentage driver not distracted</label>
+				<input type="text" class="form-control" name="not_distracted" placeholder="not distracted" required/>
+			</div>
+			<div class="form-group">
+				<label>Enter Accident percentage first time accident</label>
+				<input type="text" class="form-control" name="first_accident" placeholder="first accident" required/>
+			</div>
+			<div class="form-group">
+				<label>Enter Car Insurance Premium</label>
+				<input type="text" class="form-control" name="car_insurance_pre" placeholder="car insurance pre" required/>
+			</div>
+			<button type="submit" class="btn btn-warning">Predict Insurance Loss</button>
+	</form>
+	</div>
+	</div>
+</body>
